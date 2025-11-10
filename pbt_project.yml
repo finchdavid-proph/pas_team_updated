@@ -20,11 +20,53 @@ pipelines:
     language: python
     createdAt: '2025-11-10 18:34:50'
     datasets:
-      inputs: []
+      inputs:
+      - datasets/source_bronze
+      - datasets/source_silver
+      - datasets/source_table_mappings
       outputs: []
     subgraphs: []
     dependencies: {}
-datasets: {}
+datasets:
+  datasets/source_bronze:
+    name: source_bronze
+    description: ''
+    author: finch.david@prophecy.io
+    createdAt: '2025-11-10 18:47:58'
+    mode: batch
+    physicalDatasets:
+      spark_guides_prod_3_pat:
+        fabricId: 34673
+        datasetType: Database
+        description: ''
+        author: finch.david@prophecy.io
+        createdAt: '2025-11-10 18:47:58'
+  datasets/source_silver:
+    name: source_silver
+    description: ''
+    author: finch.david@prophecy.io
+    createdAt: '2025-11-10 18:48:46'
+    mode: batch
+    physicalDatasets:
+      spark_guides_prod_3_pat:
+        fabricId: 34673
+        datasetType: Database
+        description: ''
+        author: finch.david@prophecy.io
+        createdAt: '2025-11-10 18:48:46'
+  datasets/source_table_mappings:
+    name: source_table_mappings
+    description: ''
+    author: finch.david@prophecy.io
+    createdAt: '2025-11-10 18:51:18'
+    mode: batch
+    physicalDatasets:
+      spark_guides_prod_3_pat:
+        fabricId: 34673
+        datasetType: Database
+        description: ''
+        author: finch.david@prophecy.io
+        createdAt: '2025-11-10 18:51:18'
 templates: {}
 jobs: {}
 gemContainer:
@@ -80,10 +122,10 @@ projectDependencies:
     projectUID: 12654
     projectName: ProphecySparkBasicsPython
     repositoryPath: gitUri=http://gitserver:3000/DxEheDCJ_team_5751/DxEheDCJ_project_12654.git&subPath=
-    version: 0.2.51
+    version: 0.2.49
     isDefault: true
     author: null
-    createdAt: '2025-11-10 18:34:29'
+    createdAt: '2025-11-10 18:36:54'
 flags:
   shouldAddDefaultDependenciesIfAbsent: true
 pipelineConfigurations: {}

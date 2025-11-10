@@ -6,8 +6,8 @@ Config: ConfigClass = ConfigClass()
 
 class Utils:
     @staticmethod
-    def initializeFromArgs(spark: SparkSession, args):
+    def initializeFromArgs(spark: SparkSession, args, default_conf="pas_validation.conf"):
         global Config
         Config.updateSpark(spark)
-        conf = parse_config(args, config_package = "prophecy_config_instances.pas_validation")
+        conf = parse_config(args, default_conf, config_package = "prophecy_config_instances.pas_validation")
         Config.update(**conf)

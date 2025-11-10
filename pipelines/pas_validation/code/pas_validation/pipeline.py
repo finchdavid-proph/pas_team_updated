@@ -4,9 +4,11 @@ from pyspark.sql.types import *
 from pas_validation.config.ConfigStore import *
 from pas_validation.functions import *
 from prophecy.utils import *
+from pas_validation.graph import *
 
 def pipeline(spark: SparkSession) -> None:
-    pass
+    df_source_table_mappings = source_table_mappings(spark)
+    TableIterator_1(Config.TableIterator_1).apply(spark, df_source_table_mappings)
 
 def main():
     spark = SparkSession.builder.enableHiveSupport().appName("pas_validation").getOrCreate()
